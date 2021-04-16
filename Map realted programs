@@ -1,0 +1,168 @@
+package deepya;
+
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Client {
+	 public static void main(String[] args) {
+	        Employee e1 = new Employee(1001,"Ram",9999,"Ram@hcl.com");
+	        Employee e2 = new Employee(1002,"Raghu",10900,"Raghu@hcl.com");
+	        Employee e3 = new Employee(1003,"Rahul",19999,"Rahul@hcl.com");
+	        Employee e4 = new Employee(1004,"Nair",20000,"Nair@hcl.com");
+	        Employee e5 = new Employee(1005,"Likith",100000,"Likith@hcl.com");
+	        
+	        
+	        Department d1 = new Department(1101,"Apps","Banglore");
+         Department d2 = new Department(1102,"Infra","Chennai");
+         
+         
+
+         HashMap<Employee ,Department> empdepMap = new HashMap<Employee , Department>();
+         empdepMap.put(e1, d1);
+         empdepMap.put(e2, d1);
+         empdepMap.put(e3, d1);
+         
+         empdepMap.put(e4, d2);
+         empdepMap.put(e5, d2);
+         
+        Set<Entry<Employee , Department>> entryset = empdepMap.entrySet();
+        for(Entry<Employee , Department> entry : entryset){
+     	   System.out.println(entry.getKey());
+     	   System.out.println(entry.getValue());
+     	   
+        }}}
+        
+         
+         
+
+package deepya;
+
+public class Department {
+	
+		
+		private Integer depId;
+		private String  depName;
+		private String  depLoc;
+		
+		public Department(Integer depId,String  depName,String  depLoc)
+		{
+
+		    this.depId = depId;
+		    this.depName = depName;
+			this.depLoc = depLoc;		
+		}
+
+		public Integer getDepId() {
+			return depId;
+		}
+
+		public void setDepId(Integer depId) {
+			this.depId = depId;
+		}
+
+		public String getDepName() {
+			return depName;
+		}
+
+		public void setDepName(String depName) {
+			this.depName = depName;
+		}
+
+		public String getDepLoc() {
+			return depLoc;
+		}
+
+		public void setDepLoc(String depLoc) {
+			this.depLoc = depLoc;
+		}
+
+		
+		@Override
+		public String toString() {
+			return "Department [depId=" + depId + ", depName=" + depName + ", depLoc=" + depLoc + "]";
+		}
+
+		public void printDepartment(){
+			System.out.println(depId);
+			System.out.println(depName);
+			System.out.println(depLoc);
+			
+		}
+		
+	}
+
+
+package deepya;
+
+public class Employee {
+	private int empId;
+	private String empName;
+	private double sal;
+	private String email;
+	
+	public Employee(int empId, String empName, double sal, String email)
+	{
+	       this.empId = empId;
+	       this.empName = empName;
+	       this.sal = sal;
+	       this.email = email;
+		
+	}
+	
+	
+	public int getEmpId() {
+		return empId;
+	}
+
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+
+	public String getEmpName() {
+		return empName;
+	}
+
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+
+	public double getSal() {
+		return sal;
+	}
+
+
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", sal=" + sal + ", email=" + email + "]";
+	}
+
+
+	public void printEmployee(){
+		System.out.println(empId);
+		System.out.println(empName);
+		System.out.println(sal);
+		System.out.println(email);
+	}
+
+}
+
